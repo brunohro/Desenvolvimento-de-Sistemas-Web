@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternador de tema</title>
+
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial;
+        }
+
+        .escuro {
+            background-color: #222;
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Alternador de tema</h1>
+
+    <p>
+        Clique no botão para mudar o tema da página.
+    </p>
+
+    <button id="tema">Alternar tema</button>
+
+</body>
+</html>
+
+<script>
+    const botao = document.getElementById("tema");
+
+    botao.addEventListener("click", function() {
+
+        document.body.classList.toggle("escuro");
+
+    });
+</script>

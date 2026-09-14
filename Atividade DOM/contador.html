@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador do BH</title>
+</head>
+<body>
+
+    <h1>Contador do BH</h1>
+
+    <h2 id="numero">0</h2>
+
+    <button id="aumentar">Aumentar</button>
+    <button id="diminuir">Diminuir</button>
+
+
+</body>
+</html>
+
+<script>
+    let contador = 0;
+
+    const numero = document.getElementById("numero");
+    const aumentar = document.getElementById("aumentar");
+    const diminuir = document.getElementById("diminuir");
+
+    aumentar.addEventListener("click", function() {
+        contador++;
+
+        numero.textContent = contador;
+    });
+
+    diminuir.addEventListener("click", function() {
+        contador--;
+
+        numero.textContent = contador;
+    });
+</script>

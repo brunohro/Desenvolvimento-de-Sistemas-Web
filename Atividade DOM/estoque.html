@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+
+    <style>
+        .estoque-baixo {
+            background-color: #ffcccc;
+            color: red;
+            font-weight: bold;
+        }
+
+        li {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Controle de Estoque</h1>
+
+    <ul id="listaProdutos"></ul>
+
+
+
+</body>
+</html>
+
+<script>
+
+    let produtos = [
+
+        { nome: "Produto A", preco: 10, quantidade: 5 },
+
+        { nome: "Produto B", preco: 100, quantidade: 2 },
+
+        { nome: "Produto C", preco: 15, quantidade: 8 },
+
+        { nome: "Produto D", preco: 30, quantidade: 1 }
+
+    ];
+
+
+    function valorTotalEstoque(produtos) {
+
+        let total = 0;
+
+        for (let produto of produtos) {
+
+            total += produto.preco * produto.quantidade;
+
+        }
+
+        return total;
+
+    }
+
+
+    function produtoMaisCaro(produtos) {
+
+        let maisCaro = produtos[0];
+
+        for (let produto of produtos) {
+
+            if (produto.preco > maisCaro.preco) {
+
+                maisCaro = produto;
+
+            }
+
+        }
+
+        return maisCaro;
+
+    }
+
+
+    function produtosAbaixoMinimo(produtos, minimo) {
+
+        return produtos.filter(produto => produto.quantidade < minimo);
+
+    }
+
+
+    let minimo = 3;
+    let lista = document.getElementById("listaProdutos");
+    for (let produto of produtos) {
+
+        let item = document.createElement("li");
+
+        item.textContent =
+            produto.nome +
+            " - Preço: R$ " +
+            produto.preco +
+            " - Quantidade: " +
+            produto.quantidade;
+
+        if (produto.quantidade < minimo) {
+
+            item.classList.add("estoque-baixo");
+
+        }
+
+        lista.appendChild(item);
+
+    }
+
+</script>

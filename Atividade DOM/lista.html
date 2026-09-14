@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Itens</title>
+
+    <style>
+        .destaque {
+            color: white;
+            background-color: #002fff;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lista de Itens</h1>
+
+    <ul id="lista">
+        <li>BH</li>
+        <li>bRUNO hENRIQUE</li>
+        <li>Bruno Henrique Rodrigues</li>
+        <li>Bruno Henrique Rodrigues de </li>
+        <li>Bruno Henrique Rodrigues de Oliveira</li>
+    </ul>
+
+    <script>
+        const lista = document.querySelectorAll("#lista li");
+
+        const limite = 15;
+
+        lista.forEach(function(item) {
+            if (item.textContent.length > limite) {
+                item.classList.add("destaque");
+            }
+        });
+    </script>
+
+</body>
+</html>
+
